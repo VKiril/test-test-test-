@@ -1,0 +1,37 @@
+- extends 'AppBundle:Layout:main.html.haml'
+
+- block content
+  = 'test'
+  %a.btn.btn-lg.btn-success{:type => 'button', :href => path('app_purchase_new')}= 'add new entry'
+  %table.table.table-bordered
+    %thead
+      %th= "date"
+      %th= "amount"
+      %th= "place"
+      %th= "Allone?"
+      %th= "ForMe"
+      %th
+    %tbody
+      - for purchase in purchases
+        %tr
+          %td= purchase.date.date
+          %td= purchase.amount
+          %td= purchase.place
+          %td= purchase.wasAlone ? 'yes' : 'no'
+          %td= purchase.forMe ? 'yes' : 'no'
+          %td
+            %a.btn.btn-warning{:type => 'button', :href => path('app_products_new', {'purchase' : purchase.id})}= 'products'
+            %a.btn.btn-info{:type => 'button', :href => path('app_purchase_edit', {'purchase' : purchase.id})}= 'edit'
+            %a.btn.btn-danger{:type => 'button', :href => path('app_purchase_remove', {'purchase' : purchase.id})}= 'remove'
+      -#%tr
+        %td="test"
+        %td="test"
+        %td="test"
+        %td="test"
+        %td="test"
+      -#%tr
+        %td="test"
+        %td="test"
+        %td="test"
+        %td="test"
+        %td="test"

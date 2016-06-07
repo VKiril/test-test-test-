@@ -1,0 +1,7 @@
+app_bundle_purchase:
+    type: annotation
+    resource: "@AppBundle/Controller/PurchaseController.php"
+
+app_bundle_product:
+    type: annotation
+    resource: "@AppBundle/Controller/ProductsController.php"

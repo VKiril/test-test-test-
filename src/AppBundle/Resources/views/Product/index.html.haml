@@ -1,0 +1,34 @@
+- extends 'AppBundle:Layout:main.html.haml'
+
+- block content
+  = 'test'
+  %a.btn.btn-lg.btn-success{:type => 'button', :href => path('app_products_new', {'purchase': purchase.id})}= 'add new product'
+  %a.btn.btn-lg.btn-success{:type => 'button', :href => path('app_purchase_index')}= 'back to purchases'
+  %h3= purchase.date.date|
+
+  %br
+  %table.table.table-bordered
+    %thead
+      %th= "name"
+      %th= "cost"
+      %th= "description"
+      %th= "purpose"
+      %th= "quantity"
+      %th= "mediumPrice"
+      %th= "countable"
+      %th= "raw"
+      %th
+    %tbody
+      - for product in products
+        %tr
+          %td= product.name
+          %td= product.cost
+          %td= product.description
+          %td= product.purpose
+          %td= product.quantity
+          %td= product.mediumPrice
+          %td= product.countable  ? 'yes' : 'no'
+          %td= product.raw ? 'yes' : 'no'
+          %td
+            %a.btn.btn-info{:type => 'button', :href => path('app_products_edit', {'product' : product.id})}= 'edit'
+            %a.btn.btn-danger{:type => 'button', :href => path('app_products_remove', {'product' : product.id})}= 'remove'

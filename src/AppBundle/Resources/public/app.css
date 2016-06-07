@@ -1,0 +1,30 @@
+html,body {
+    height: 100%;
+}
+
+.app-header {
+    background: black;
+    margin-top: -20px;
+    height: 70px;
+    -moz-box-shadow: 0 4px 4px -2px #000000;
+    box-shadow: 0 10px 10px -5px #000000;
+    margin-bottom: 50px;
+}
+
+.app-header >h1 {
+    color: white;
+
+}
+
+.content {
+    padding: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4c525c;
+    /*min-width: 1200px;*/
+    height: 100%;
+    background: rgba(52, 210, 210, 0.31);
+}
