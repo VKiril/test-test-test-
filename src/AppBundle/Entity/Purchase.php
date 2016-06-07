@@ -79,8 +79,9 @@ class Purchase
 
     public function __construct()
     {
-        $date = new \DateTime('now');
-        $this->createdAt = $date->format('Y-m-d');
+//        $date = new \DateTime('now');
+//        $this->createdAt = $date->format('Y-m-d');
+        $this->createdAt = new \DateTime('now');
     }
 
     /**

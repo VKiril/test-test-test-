@@ -1,0 +1,27 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    %title
+      - block title "Right Way"
+
+    - stylesheets "assets/vendor/bootstrap/dist/css/bootstrap.min.css" "bundles/workactivity/activity.css"
+      %link{:href => "#{asset_url}", :rel => "stylesheet", :type => "text/css"}
+
+    - block css ""
+
+  %body
+    - block head_title
+      .app-header
+        %h1= 'Weekly work activity'
+    - block body
+      .content
+        - block content ""
+
+    - javascripts 'assets/vendor/jquery/dist/jquery.min.js' 'assets/vendor/bootstrap/dist/js/bootstrap.min.js'
+      %script{:src => asset_url, :type => "text/javascript"}
+
+    - block js ""

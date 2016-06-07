@@ -1,3 +1,8 @@
+work_activity:
+    resource: "@WorkActivityBundle/Controller/"
+    type:     annotation
+    prefix:   /work/
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
