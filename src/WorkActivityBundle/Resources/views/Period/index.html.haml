@@ -1,4 +1,20 @@
 - extends 'WorkActivityBundle:Layout:main.html.haml'
 
 - block content
-  = "test"
+  .calendar
+    .period
+      = form_start(periodForm)
+      .from
+        = form_label(periodForm.from)
+        = form_widget(periodForm.from)
+      .to
+        = form_label(periodForm.to)
+        = form_widget(periodForm.to)
+
+      = form_end(periodForm)
+    .holiday
+      = form_start(holidayForm)
+      = form_widget(holidayForm)
+      = form_end(holidayForm)
+    .period-footer
+      %a.btn.btn-default{:href => path('workactivity_activity_new')}= "create new activity"

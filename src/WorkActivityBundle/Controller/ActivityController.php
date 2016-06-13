@@ -3,7 +3,7 @@
 namespace WorkActivityBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\HttpFoundation\Request;
 use WorkActivityBundle\Form\Type\ActivityType;
 
 /**
@@ -43,7 +43,7 @@ class ActivityController extends BaseController
 
             $this->addFlash('success', 'New Activity was registered');
 
-            return $this->redirectToRoute('workactivity_activity_index');
+            return $this->redirectToRoute('workactivity_period_index');
         }
 
         return $this->render('WorkActivityBundle:Activity:new.html.haml', ['form'=>$form->createView()]);

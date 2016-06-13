@@ -58,13 +58,14 @@ class Period
     /**
      * @var TODOActivity $TODOActivity
      *
-     * @ORM\OneToMany(targetEntity="TODOActivity", mappedBy="period")
+     * @ORM\ManyToOne(targetEntity="TODOActivity", inversedBy="period")
      */
     protected $TODOActivity;
 
     public function __construct()
     {
         $this->holiday = [];
+        $this->closed = false;
     }
 
     /**

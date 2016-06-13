@@ -89,6 +89,7 @@ class Activity
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
+        $this->updatedAt = new \DateTime('now');
     }
 
     /**

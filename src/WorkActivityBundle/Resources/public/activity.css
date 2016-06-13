@@ -29,3 +29,27 @@ html,body {
     height: 100%;
     background: rgba(52, 210, 210, 0.31);
 }
+
+.from {
+    display: inline-block;
+    margin: 20px;
+}
+
+.to {
+    display: inline-block;
+    margin: 20px;
+}
+
+.period-save {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.period {
+    display: inline-block;
+}
+
+.holiday {
+    display: inline-block;
+    margin: 20px;
+}

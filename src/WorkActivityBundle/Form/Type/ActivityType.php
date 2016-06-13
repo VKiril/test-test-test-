@@ -4,15 +4,16 @@ namespace WorkActivityBundle\Form\Type;
 
 
 
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WorkActivityBundle\Entity\Activity;
 
-class ActivityType
+class ActivityType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -21,7 +22,7 @@ class ActivityType
                 'label' => 'name'
             ])
             ->add('description', TextareaType::class)
-            ->add('time', DateTimeType::class)
+            ->add('time', TextType::class)
             ->add('selfTeach', CheckboxType::class)
             ->add('invoiceable', CheckboxType::class)
             ->add('submit', SubmitType::class, [

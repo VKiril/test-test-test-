@@ -14,14 +14,25 @@ class PeriodType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        if($options['empty_data'] == 'first'){
+            $builder
+                ->add('from', DateTimeType::class, [
+                    'label' => 'from'
+                ])
+                ->add('to', DateTimeType::class,[
+                    'label' => 'to'
+                ]);
+        } else {
+            $builder
+                ->add('holiday', DateTimeType::class);
+        }
+
         $builder
-            ->add('from', DateTimeType::class)
-            ->add('to', DateTimeType::class)
-            ->add('holiday', DateTimeType::class)
             ->add('submit', SubmitType::class, [
-                'attr'  => ['class' => ''],
+                'attr'  => ['class' => 'period-save btn btn-info'],
                 'label' => 'save',
             ]);
+        $options['empty_data'] = '';
     }
 
     /**

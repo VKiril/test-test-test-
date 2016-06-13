@@ -3,10 +3,11 @@
 namespace WorkActivityBundle\Controller;
 
 
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use WorkActivityBundle\Entity\Period;
+use WorkActivityBundle\Form\Type\ActivityType;
+use WorkActivityBundle\Form\Type\PeriodType;
 
 /**
  * Class PeriodController
@@ -23,10 +24,16 @@ class PeriodController extends BaseController
      */
     public function indexAction()
     {
-        $period = $this->getEM()->getRepository('WorkActivityBundle:Period')
-            ->findAll();
+        $period      = $this->getEM()->getRepository('WorkActivityBundle:Period')->findBy(['closed' => false]);
 
-        return $this->render('WorkActivityBundle:Period:index.html.haml', ['period' => $period]);
+        $periodForm  = $this->createForm(PeriodType::class, null, ['empty_data' => 'first']);
+        $holidayForm = $this->createForm(PeriodType::class, null, ['empty_data' => 'second']);
+
+        return $this->render('WorkActivityBundle:Period:index.html.haml', [
+            'period'       => $period,
+            'periodForm'   => $periodForm->createView(),
+            'holidayForm'  => $holidayForm->createView(),
+        ]);
     }
 
     /**
