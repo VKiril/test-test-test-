@@ -32,6 +32,7 @@ class Purchase
      * @ORM\Column(type="date")
      */
     protected $date;
+
     /**
      * @var \DateTime
      *

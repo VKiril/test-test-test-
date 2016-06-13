@@ -1,26 +1,77 @@
 <?php
 
 namespace WorkActivityBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 
-
+/**
+ * Class Activity
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="activity")
+ *
+ * @package WorkActivityBundle\Entity
+ */
 class Activity
 {
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     protected $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
     protected $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
     protected $description;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
     protected $time;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
     protected $createdAt;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
     protected $updatedAt;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
     protected $selfTeach;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
     protected $invoiceable;
 
+    /**
+     * Activity constructor.
+     */
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
@@ -35,23 +86,7 @@ class Activity
     }
 
     /**
-     * @return mixed
-     */
-    public function getInvoiceable()
-    {
-        return $this->invoiceable;
-    }
-
-    /**
-     * @param mixed $invoiceable
-     */
-    public function setInvoiceable($invoiceable)
-    {
-        $this->invoiceable = $invoiceable;
-    }
-
-    /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -59,7 +94,7 @@ class Activity
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -67,7 +102,7 @@ class Activity
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getDescription()
     {
@@ -75,7 +110,7 @@ class Activity
     }
 
     /**
-     * @param mixed $description
+     * @param string $description
      */
     public function setDescription($description)
     {
@@ -83,7 +118,7 @@ class Activity
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTime()
     {
@@ -91,7 +126,7 @@ class Activity
     }
 
     /**
-     * @param mixed $time
+     * @param string $time
      */
     public function setTime($time)
     {
@@ -115,7 +150,7 @@ class Activity
     }
 
     /**
-     * @return mixed
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -123,7 +158,7 @@ class Activity
     }
 
     /**
-     * @param mixed $updatedAt
+     * @param \DateTime $updatedAt
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -131,18 +166,35 @@ class Activity
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
-    public function getSelfTeach()
+    public function isSelfTeach()
     {
         return $this->selfTeach;
     }
 
     /**
-     * @param mixed $selfTeach
+     * @param boolean $selfTeach
      */
     public function setSelfTeach($selfTeach)
     {
         $this->selfTeach = $selfTeach;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isInvoiceable()
+    {
+        return $this->invoiceable;
+    }
+
+    /**
+     * @param boolean $invoiceable
+     */
+    public function setInvoiceable($invoiceable)
+    {
+        $this->invoiceable = $invoiceable;
+    }
+
 }
