@@ -2,8 +2,17 @@
 
 namespace WorkActivityBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
-class TODO
+/**
+ * Class TODOActivity
+ *
+ * @ORM\Entity
+ * @ORM\Table(name="todoActivity")
+ *
+ * @package WorkActivityBundle\Entity
+ */
+class TODOActivity
 {
     /**
      * @ORM\Column(type="integer")
@@ -48,7 +57,14 @@ class TODO
     protected $createdAt;
 
     /**
-     * TODO constructor.
+     * @var Period $period
+     *
+     * @ORM\OneToMany(targetEntity="Period", mappedBy="TODOActivity")
+     */
+    protected $period;
+
+    /**
+     * TODOActivity constructor.
      * @param \DateTime $createdAt
      */
     public function __construct(\DateTime $createdAt)
@@ -142,6 +158,22 @@ class TODO
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return Period
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * @param Period $period
+     */
+    public function setPeriod($period)
+    {
+        $this->period = $period;
     }
 
 }

@@ -41,6 +41,27 @@ class Period
      */
     protected $holiday;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    protected $closed;
+
+    /**
+     * @var Activity $activity
+     *
+     * @ORM\ManyToOne(targetEntity="WorkActivityBundle\Entity\Activity", inversedBy="period")
+     */
+    protected $activity;
+
+    /**
+     * @var TODOActivity $TODOActivity
+     *
+     * @ORM\OneToMany(targetEntity="TODOActivity", mappedBy="period")
+     */
+    protected $TODOActivity;
+
     public function __construct()
     {
         $this->holiday = [];
@@ -102,5 +123,52 @@ class Period
         $this->holiday = $holiday;
     }
 
+    /**
+     * @return boolean
+     */
+    public function isClosed()
+    {
+        return $this->closed;
+    }
+
+    /**
+     * @param boolean $closed
+     */
+    public function setClosed($closed)
+    {
+        $this->closed = $closed;
+    }
+
+    /**
+     * @return Activity
+     */
+    public function getActivity()
+    {
+        return $this->activity;
+    }
+
+    /**
+     * @param Activity $activity
+     */
+    public function setActivity($activity)
+    {
+        $this->activity = $activity;
+    }
+
+    /**
+     * @return TODO
+     */
+    public function getTodo()
+    {
+        return $this->todo;
+    }
+
+    /**
+     * @param TODO $todo
+     */
+    public function setTodo($todo)
+    {
+        $this->todo = $todo;
+    }
 
 }

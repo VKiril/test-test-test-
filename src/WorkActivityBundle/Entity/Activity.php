@@ -70,6 +70,20 @@ class Activity
     protected $invoiceable;
 
     /**
+     * @var Project $project
+     *
+     * @ORM\ManyToOne(targetEntity="Project", inversedBy="activity")
+     */
+    protected $project;
+
+    /**
+     * @var Period $period
+     *
+     * @ORM\OneToMany(targetEntity="Period", mappedBy="activity")
+     */
+    protected $period;
+
+    /**
      * Activity constructor.
      */
     public function __construct()
@@ -195,6 +209,38 @@ class Activity
     public function setInvoiceable($invoiceable)
     {
         $this->invoiceable = $invoiceable;
+    }
+
+    /**
+     * @return Project
+     */
+    public function getProject()
+    {
+        return $this->project;
+    }
+
+    /**
+     * @param Project $project
+     */
+    public function setProject($project)
+    {
+        $this->project = $project;
+    }
+
+    /**
+     * @return Period
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * @param Period $period
+     */
+    public function setPeriod($period)
+    {
+        $this->period = $period;
     }
 
 }
