@@ -18,21 +18,34 @@ use WorkActivityBundle\Form\Type\PeriodType;
 class PeriodController extends BaseController
 {
     /**
+     * @param Request $request
+     *
      * @Route("/")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $period      = $this->getEM()->getRepository('WorkActivityBundle:Period')->findBy(['closed' => false]);
+        $activities      = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findAll();
+        $period = new Period();
+        $periodForm  = $this->createForm(PeriodType::class, $period, ['label' => 'first']);
+//        $holidayForm = $this->createForm(PeriodType::class, null, ['empty_data' => 'second']);
 
-        $periodForm  = $this->createForm(PeriodType::class, null, ['empty_data' => 'first']);
-        $holidayForm = $this->createForm(PeriodType::class, null, ['empty_data' => 'second']);
+        $periodForm->handleRequest($request);
+
+        if($periodForm->isValid()){
+            $this->getEM()->persist($period);
+            $this->getEM()->flush();
+
+            $this->addFlash('success', 'new period was created');
+
+            return $this->redirectToRoute('workactivity_activity_new', ['period' => $period->getId()]);
+        }
 
         return $this->render('WorkActivityBundle:Period:index.html.haml', [
-            'period'       => $period,
+            'activities'       => $activities,
             'periodForm'   => $periodForm->createView(),
-            'holidayForm'  => $holidayForm->createView(),
+//            'holidayForm'  => $holidayForm->createView(),
         ]);
     }
 

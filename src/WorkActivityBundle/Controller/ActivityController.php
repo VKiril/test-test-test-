@@ -4,6 +4,8 @@ namespace WorkActivityBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use WorkActivityBundle\Entity\Activity;
+use WorkActivityBundle\Entity\Period;
 use WorkActivityBundle\Form\Type\ActivityType;
 
 /**
@@ -26,19 +28,23 @@ class ActivityController extends BaseController
     }
 
     /**
+     * @param Period $period
      * @param Request $request
      *
-     * @Route("/new")
+     * @Route("/{period}new")
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function newAction(Request $request)
+    public function newAction(Period $period, Request $request)
     {
         $form = $this->createForm(ActivityType::class);
         $form->handleRequest($request);
 
         if($form->isValid()){
-            $this->getEM()->persist($form->getData());
+            /** @var Activity $activity */
+            $activity = $form->getData();
+            $activity->setPeriod($period);
+            $this->getEM()->persist($activity);
             $this->getEM()->flush();
 
             $this->addFlash('success', 'New Activity was registered');

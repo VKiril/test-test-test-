@@ -25,19 +25,19 @@ class Period
      *
      * @ORM\Column(type="datetime")
      */
-    protected $from;
+    protected $fromDate;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(type="datetime")
      */
-    protected $to;
+    protected $toDate;
 
     /**
-     * @var \DateTime
+     * @var array
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="array")
      */
     protected $holiday;
 
@@ -79,37 +79,37 @@ class Period
     /**
      * @return \DateTime
      */
-    public function getFrom()
+    public function getFromDate()
     {
-        return $this->from;
+        return $this->fromDate;
     }
 
     /**
-     * @param \DateTime $from
+     * @param \DateTime $fromDate
      */
-    public function setFrom($from)
+    public function setFromDate($fromDate)
     {
-        $this->from = $from;
+        $this->fromDate = $fromDate;
     }
 
     /**
      * @return \DateTime
      */
-    public function getTo()
+    public function getToDate()
     {
-        return $this->to;
+        return $this->toDate;
     }
 
     /**
-     * @param \DateTime $to
+     * @param \DateTime $toDate
      */
-    public function setTo($to)
+    public function setToDate($toDate)
     {
-        $this->to = $to;
+        $this->toDate = $toDate;
     }
 
     /**
-     * @return \DateTime
+     * @return array
      */
     public function getHoliday()
     {
@@ -117,7 +117,7 @@ class Period
     }
 
     /**
-     * @param \DateTime $holiday
+     * @param array $holiday
      */
     public function setHoliday($holiday)
     {
@@ -157,19 +157,18 @@ class Period
     }
 
     /**
-     * @return TODO
+     * @return TODOActivity
      */
-    public function getTodo()
+    public function getTODOActivity()
     {
-        return $this->todo;
+        return $this->TODOActivity;
     }
 
     /**
-     * @param TODO $todo
+     * @param TODOActivity $TODOActivity
      */
-    public function setTodo($todo)
+    public function setTODOActivity($TODOActivity)
     {
-        $this->todo = $todo;
+        $this->TODOActivity = $TODOActivity;
     }
-
 }

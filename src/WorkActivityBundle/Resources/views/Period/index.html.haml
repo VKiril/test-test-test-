@@ -5,16 +5,38 @@
     .period
       = form_start(periodForm)
       .from
-        = form_label(periodForm.from)
-        = form_widget(periodForm.from)
+        = form_label(periodForm.fromDate)
+        = form_widget(periodForm.fromDate)
       .to
-        = form_label(periodForm.to)
-        = form_widget(periodForm.to)
+        = form_label(periodForm.toDate)
+        = form_widget(periodForm.toDate)
 
       = form_end(periodForm)
-    .holiday
-      = form_start(holidayForm)
-      = form_widget(holidayForm)
-      = form_end(holidayForm)
+    #add-holiday-btn.btn.btn-warning= '+'
+
+    -#.holiday
+      .h-group#h-group
+        = form_start(holidayForm)
+        = form_widget(holidayForm)
+        = form_end(holidayForm)
     .period-footer
       %a.btn.btn-default{:href => path('workactivity_activity_new')}= "create new activity"
+
+
+  %table.table.table-bordered.table-striped.bg-info
+    %thead
+      %td= 'nr'
+      %td= 'name'
+      %td= 'description'
+      %td= 'time'
+      %td= 'self teach'
+      %td= 'Invoiceable'
+    %tbody
+      - for activitie in activities
+        %tr
+          %td= loop.index
+          %td= activitie.name
+          %td= activitie.description
+          %td= activitie.time
+          %td= activitie.selfTeach
+          %td= activitie.invoiceable
