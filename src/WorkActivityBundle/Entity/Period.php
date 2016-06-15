@@ -2,11 +2,12 @@
 
 namespace WorkActivityBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Period
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="WorkActivityBundle\Repository\PeriodRepository")
  * @ORM\Table(name="period")
  *
  * @package WorkActivityBundle\Entity
@@ -51,14 +52,14 @@ class Period
     /**
      * @var Activity $activity
      *
-     * @ORM\ManyToOne(targetEntity="WorkActivityBundle\Entity\Activity", inversedBy="period")
+     * @ORM\OneToMany(targetEntity="WorkActivityBundle\Entity\Activity", mappedBy="period")
      */
     protected $activity;
 
     /**
      * @var TODOActivity $TODOActivity
      *
-     * @ORM\ManyToOne(targetEntity="TODOActivity", inversedBy="period")
+     * @ORM\OneToMany(targetEntity="TODOActivity", mappedBy="period")
      */
     protected $TODOActivity;
 
@@ -66,6 +67,7 @@ class Period
     {
         $this->holiday = [];
         $this->closed = false;
+        $this->TODOActivity = new ArrayCollection();
     }
 
     /**

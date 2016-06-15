@@ -1,1 +1,24 @@
-\
+- extends 'WorkActivityBundle:Layout:main.html.haml'
+
+- block content
+  .calendar
+    .period
+      = form_start(form)
+      .from
+        = form_label(form.fromDate)
+        = form_widget(form.fromDate)
+      .to
+        = form_label(form.toDate)
+        = form_widget(form.toDate)
+
+      = form_end(form)
+    #add-holiday-btn.btn.btn-warning= '+'
+
+    -#.holiday
+      .h-group#h-group
+        = form_start(holidayForm)
+        = form_widget(holidayForm)
+        = form_end(holidayForm)
+    .period-footer
+      -#- if period is defined
+        %a.btn.btn-default{:href => path('workactivity_activity_new', {'period' :period})}= "create new activity"

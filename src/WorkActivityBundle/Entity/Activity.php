@@ -1,12 +1,13 @@
 <?php
 
 namespace WorkActivityBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Class Activity
  *
- * @ORM\Entity
+ * @ORM\Entity( )
  * @ORM\Table(name="activity")
  *
  * @package WorkActivityBundle\Entity
@@ -79,7 +80,7 @@ class Activity
     /**
      * @var Period $period
      *
-     * @ORM\OneToMany(targetEntity="Period", mappedBy="activity")
+     * @ORM\ManyToOne(targetEntity="Period", inversedBy="activity")
      */
     protected $period;
 

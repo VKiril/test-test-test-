@@ -6,6 +6,7 @@ namespace WorkActivityBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -25,6 +26,9 @@ class ActivityType extends AbstractType
             ->add('time', TextType::class)
             ->add('selfTeach', CheckboxType::class)
             ->add('invoiceable', CheckboxType::class)
+            ->add('project', ChoiceType::class, [
+                'choices' => $options['label']
+            ])
             ->add('submit', SubmitType::class, [
                 'attr'  => ['class' => ''],
                 'label' => 'save',

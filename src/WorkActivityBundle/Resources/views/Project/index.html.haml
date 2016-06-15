@@ -1,0 +1,18 @@
+- extends 'WorkActivityBundle:Layout:main.html.haml'
+
+- block content
+  %a.btn.btn-warning{:href => path('workactivity_project_new')}= 'add new project'
+  %table.table.table-striped
+    %thead
+      %td= 'no'
+      %td= 'name'
+      %td= 'owner'
+      %td= 'technology'
+    %tbody
+      - for project in projects
+        %tr
+          %td= loop.index
+          %td= project.name
+          %td= project.owner
+          %td= project.technology
+

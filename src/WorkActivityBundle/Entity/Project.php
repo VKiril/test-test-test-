@@ -50,6 +50,18 @@ class Project
     protected $activity;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    protected $closed;
+
+    public function __construct()
+    {
+        $this->closed = false;
+    }
+
+    /**
      * @return string
      */
     public function getTechnology()
@@ -119,6 +131,22 @@ class Project
     public function setActivity($activity)
     {
         $this->activity = $activity;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isClosed()
+    {
+        return $this->closed;
+    }
+
+    /**
+     * @param boolean $closed
+     */
+    public function setClosed($closed)
+    {
+        $this->closed = $closed;
     }
 
 }

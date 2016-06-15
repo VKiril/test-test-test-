@@ -59,7 +59,7 @@ class TODOActivity
     /**
      * @var Period $period
      *
-     * @ORM\OneToMany(targetEntity="Period", mappedBy="TODOActivity")
+     * @ORM\ManyToOne(targetEntity="Period", inversedBy="TODOActivity")
      */
     protected $period;
 

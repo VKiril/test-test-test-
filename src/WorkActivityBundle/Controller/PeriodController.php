@@ -6,7 +6,6 @@ namespace WorkActivityBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use WorkActivityBundle\Entity\Period;
-use WorkActivityBundle\Form\Type\ActivityType;
 use WorkActivityBundle\Form\Type\PeriodType;
 
 /**
@@ -26,26 +25,22 @@ class PeriodController extends BaseController
      */
     public function indexAction(Request $request)
     {
-        $activities      = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findAll();
-        $period = new Period();
-        $periodForm  = $this->createForm(PeriodType::class, $period, ['label' => 'first']);
-//        $holidayForm = $this->createForm(PeriodType::class, null, ['empty_data' => 'second']);
+        $periodReposiotry = $this->getEM()->getRepository('WorkActivityBundle:Period');
 
-        $periodForm->handleRequest($request);
+        $validPeriod = $periodReposiotry->getLastPeriods();
+        $currentPeriod = $periodReposiotry->getCurrentPeriod();
 
-        if($periodForm->isValid()){
-            $this->getEM()->persist($period);
-            $this->getEM()->flush();
-
-            $this->addFlash('success', 'new period was created');
-
-            return $this->redirectToRoute('workactivity_activity_new', ['period' => $period->getId()]);
+        if (!$validPeriod['isValid']) {
+            return $this->redirectToRoute('workactivity_period_new');
         }
 
+        $activities = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findAll();
+
+
         return $this->render('WorkActivityBundle:Period:index.html.haml', [
-            'activities'       => $activities,
-            'periodForm'   => $periodForm->createView(),
-//            'holidayForm'  => $holidayForm->createView(),
+            'activities' => $activities,
+            'currentPeriod' => $currentPeriod[0],
+            'periods' => $validPeriod['period']
         ]);
     }
 
@@ -58,7 +53,22 @@ class PeriodController extends BaseController
      */
     public function newAction(Request $request)
     {
-        return $this->render('WorkActivityBundle:Period:new.html.haml', []);
+        $period = new Period();
+        $form   = $this->createForm(PeriodType::class, $period, ['label' => 'first']);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getEM()->persist($period);
+            $this->getEM()->flush();
+
+            $this->addFlash('success', 'new period was created');
+
+            return $this->redirectToRoute('workactivity_period_index');
+        }
+
+
+        return $this->render('WorkActivityBundle:Period:new.html.haml', ['form' => $form->createView()]);
     }
 
     /**
@@ -71,6 +81,35 @@ class PeriodController extends BaseController
      */
     public function editAction(Period $period, Request $request)
     {
-        return $this->render('WorkActivityBundle:Period:new.html.haml', []);
+        $form   = $this->createForm(PeriodType::class, $period, ['label' => 'first']);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getEM()->persist($period);
+            $this->getEM()->flush();
+
+            $this->addFlash('success', 'new period was created');
+
+            return $this->redirectToRoute('workactivity_period_index');
+        }
+
+
+        return $this->render('WorkActivityBundle:Period:new.html.haml', ['form' => $form->createView()]);
+    }
+
+    /**
+     * @param Period $period
+     *
+     * @Route("/{period}/remove")
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function removeAction(Period $period)
+    {
+        $this->getEM()->remove($period);
+        $this->getEM()->flush();
+
+        return $this->redirectToRoute('workactivity_period_index');
     }
 }
