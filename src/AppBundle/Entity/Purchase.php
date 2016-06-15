@@ -32,6 +32,7 @@ class Purchase
      * @ORM\Column(type="date")
      */
     protected $date;
+
     /**
      * @var \DateTime
      *
@@ -79,8 +80,9 @@ class Purchase
 
     public function __construct()
     {
-        $date = new \DateTime('now');
-        $this->createdAt = $date->format('Y-m-d');
+//        $date = new \DateTime('now');
+//        $this->createdAt = $date->format('Y-m-d');
+        $this->createdAt = new \DateTime('now');
     }
 
     /**
@@ -92,87 +94,7 @@ class Purchase
     }
 
     /**
-     * @return mixed
-     */
-    public function getForMe()
-    {
-        return $this->forMe;
-    }
-
-    /**
-     * @param mixed $forMe
-     */
-    public function setForMe($forMe)
-    {
-        $this->forMe = $forMe;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getWasAlone()
-    {
-        return $this->wasAlone;
-    }
-
-    /**
-     * @param mixed $wasAlone
-     */
-    public function setWasAlone($wasAlone)
-    {
-        $this->wasAlone = $wasAlone;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPlace()
-    {
-        return $this->place;
-    }
-
-    /**
-     * @param mixed $place
-     */
-    public function setPlace($place)
-    {
-        $this->place = $place;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreatedAt()
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param mixed $createdAt
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->createdAt = $createdAt;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param mixed $date
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    }
-
-    /**
-     * @return mixed
+     * @return int
      */
     public function getAmount()
     {
@@ -180,10 +102,139 @@ class Purchase
     }
 
     /**
-     * @param mixed $amount
+     * @param int $amount
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param \DateTime $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlace()
+    {
+        return $this->place;
+    }
+
+    /**
+     * @param string $place
+     */
+    public function setPlace($place)
+    {
+        $this->place = $place;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isWasAlone()
+    {
+        return $this->wasAlone;
+    }
+
+    /**
+     * @param boolean $wasAlone
+     */
+    public function setWasAlone($wasAlone)
+    {
+        $this->wasAlone = $wasAlone;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isForMe()
+    {
+        return $this->forMe;
+    }
+
+    /**
+     * @param boolean $forMe
+     */
+    public function setForMe($forMe)
+    {
+        $this->forMe = $forMe;
+    }
+
+    /**
+     * @return Product
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * @param Product $product
+     */
+    public function setProduct($product)
+    {
+        $this->product = $product;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @return Update
+     */
+    public function getUpdate()
+    {
+        return $this->update;
+    }
+
+    /**
+     * @param Update $update
+     */
+    public function setUpdate($update)
+    {
+        $this->update = $update;
+    }
+
 }

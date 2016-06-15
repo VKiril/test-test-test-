@@ -4,7 +4,7 @@
   = 'test'
   %a.btn.btn-lg.btn-success{:type => 'button', :href => path('app_products_new', {'purchase': purchase.id})}= 'add new product'
   %a.btn.btn-lg.btn-success{:type => 'button', :href => path('app_purchase_index')}= 'back to purchases'
-  %h3= purchase.date.date|
+  %h3= purchase.date.date
 
   %br
   %table.table.table-bordered

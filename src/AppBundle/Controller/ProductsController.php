@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @Route("/purchase")
+ * @Route("/product")
  */
 class ProductsController extends BaseController
 {
@@ -94,6 +94,6 @@ class ProductsController extends BaseController
         $this->getEM()->flush();
 
         $this->addFlash('success', 'Product was removed');
-        return $this->render('');
+        return $this->redirectToRoute('app_products_index',['purchase' => $product->getPurchase()->getId()]);
     }
 }

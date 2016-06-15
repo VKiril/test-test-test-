@@ -1,0 +1,25 @@
+- extends 'WorkActivityBundle:Layout:main.html.haml'
+
+- block content
+  %a.btn.btn-default{:href => path('workactivity_activity_new', {'period' :period.id})}= "create new activity"
+  %table.table.table-bordered.table-striped.bg-info
+    %thead
+      %td= 'nr'
+      %td= 'name'
+      %td= 'description'
+      %td= 'time'
+      %td= 'self teach'
+      %td= 'Invoiceable'
+      %td
+    %tbody
+      - for activity in activities
+        %tr
+          %td= loop.index
+          %td= activity.name
+          %td= activity.description
+          %td= activity.time
+          %td= activity.selfTeach
+          %td= activity.invoiceable
+          %td.text-center
+            %a.btn.btn-danger{:href => path('workactivity_activity_remove', {'activity': activity.id })}= 'remove'
+            %a.btn.btn-success{:href => path('workactivity_activity_edit', {'activity': activity.id })}= 'edit'

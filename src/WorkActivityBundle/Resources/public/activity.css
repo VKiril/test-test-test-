@@ -30,17 +30,25 @@ html,body {
     background: rgba(52, 210, 210, 0.31);
 }
 
-.main-menu {
-    width: 49%;
+.from {
     display: inline-block;
-    background: white;
+    margin: 20px;
 }
 
-.work-img {
-    width: 50%;
-    height: 400px;
-    transform: scale(0.4, 0.4);
-    -ms-transform: scale(0.5, 0.5);
-    -webkit-transform: scale(0.5, 0.5);
-    background-image: url(/bundles/app/images/work-hard.png);
+.to {
+    display: inline-block;
+    margin: 20px;
+}
+
+.period-save {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.period {
+    display: inline-block;
+}
+
+.holiday {
+    margin: 20px;
 }

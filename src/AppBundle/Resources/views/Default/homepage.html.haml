@@ -1,4 +1,9 @@
 - extends 'AppBundle:Layout:main.html.haml'
 
 - block content
-  %a{:href => path('app_purchase_index')}"Purchase"
+  .left.main-menu
+    %a{:href => path('app_purchase_index')}
+      %h1= "Purchase"
+  .right.main-menu
+    %a{:href => path('workactivity_default_index')}
+      %h1= "Work Activity"
