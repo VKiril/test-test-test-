@@ -52,3 +52,34 @@ html,body {
 .holiday {
     margin: 20px;
 }
+
+.m-5 {
+    margin: 10px;
+}
+
+.date-from, .date-to {
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.time {
+    font-weight: bold;
+    font-size: 25px;
+    display: inline-block;
+    color: darkblue;
+    margin-right: 50px;
+}
+
+.w-100 {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.show-date {
+    border: 1px solid rgba(30, 144, 255, 0.21);
+    width: 500px;
+    margin-left: 100px;
+    padding-left: 40px;
+    border-radius: 5px;
+}

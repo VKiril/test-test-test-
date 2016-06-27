@@ -2,17 +2,18 @@
 
 - block content
   -#.content
+  .current-period
+    = 'current period'
+  .show-date
+    .date-from= 'from '
+    .time= currentPeriod.fromDate.date|date("d-m-Y")
+
+    .date-to= 'to '
+    .time= currentPeriod.toDate.date|date("d-m-Y")
+
   .calendar
     .period-footer
       %a.btn.btn-default{:href => path('workactivity_period_new')}= 'new period'
-  .current-period
-    = 'current period'
-    %br
-    = 'from '
-    = currentPeriod.fromDate.date
-    %br
-    = 'to '
-    = currentPeriod.toDate.date
   %table.table.table-bordered.table-striped.bg-info
     %thead
       %td= 'from'

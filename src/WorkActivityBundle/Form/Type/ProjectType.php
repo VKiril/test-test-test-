@@ -15,9 +15,9 @@ class ProjectType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('owner', TextType::class)
-            ->add('technology', TextType::class)
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('owner', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('technology', TextType::class, ['attr' => ['class' => 'form-control']])
             ->add('submit', SubmitType::class, [
                 'attr'  => ['class' => 'period-save btn btn-info'],
                 'label' => 'save',

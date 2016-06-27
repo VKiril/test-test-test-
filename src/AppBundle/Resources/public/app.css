@@ -10,6 +10,7 @@ html,body {
     box-shadow: 0 10px 10px -5px #000000;
     margin-bottom: 50px;
     padding: 11px;
+
 }
 
 .app-header >h1 {
@@ -44,3 +45,5 @@ html,body {
     -webkit-transform: scale(0.5, 0.5);
     background-image: url(/bundles/app/images/work-hard.png);
 }
+
+

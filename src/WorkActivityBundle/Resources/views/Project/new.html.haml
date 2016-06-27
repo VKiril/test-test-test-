@@ -1,7 +1,22 @@
 - extends 'WorkActivityBundle:Layout:main.html.haml'
 
 - block content
-
-    = form_start(form)
-    = form_widget(form)
-    = form_end(form)
+    .container
+        .row
+            = form_start(form)
+            .m-5
+                .col-xs-4.p
+                    = form_label(form.name)
+                .col-xs-8
+                    = form_widget(form.name)
+            .m-5
+                .col-xs-4
+                    = form_label(form.owner)
+                .col-xs-8
+                    = form_widget(form.owner)
+            .m-5
+                .col-xs-4
+                    = form_label(form.technology)
+                .col-xs-8
+                    = form_widget(form.technology)
+            = form_end(form)
