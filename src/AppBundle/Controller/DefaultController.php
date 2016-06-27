@@ -12,7 +12,7 @@ class DefaultController extends BaseController
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
+        $tes =  1;
         return $this->render('AppBundle:Default:homepage.html.haml', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
         ]);
