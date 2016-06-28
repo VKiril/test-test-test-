@@ -85,6 +85,13 @@ class Activity
     protected $period;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     */
+    protected $date;
+
+    /**
      * Activity constructor.
      */
     public function __construct()
@@ -243,6 +250,22 @@ class Activity
     public function setPeriod($period)
     {
         $this->period = $period;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
     }
 
 }

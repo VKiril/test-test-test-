@@ -1,55 +1,67 @@
 - extends 'WorkActivityBundle:Layout:main.html.haml'
 
 - block content
-  -#.content
-  .current-period
-    = 'current period'
-  .show-date
-    .date-from= 'from '
-    .time= currentPeriod.fromDate.date|date("d-m-Y")
+  .activity-content
 
-    .date-to= 'to '
-    .time= currentPeriod.toDate.date|date("d-m-Y")
+    .work-activity-left
+      .current-period
+        = 'current period'
+      .show-date
+        .date-from= 'from '
+        .time= currentPeriod.fromDate.date|date("d-m-Y")
 
-  .calendar
-    .period-footer
-      %a.btn.btn-default{:href => path('workactivity_period_new')}= 'new period'
-  %table.table.table-bordered.table-striped.bg-info
-    %thead
-      %td= 'from'
-      %td= 'to'
-      %td
+        .date-to= 'to '
+        .time= currentPeriod.toDate.date|date("d-m-Y")
 
-    %tbody
-      - for period in periods
-        %tr
-          %td= period.fromDate.date
-          %td= period.toDate.date
-          %td.text-center
-            %a.btn.btn-info{:href => path('workactivity_activity_index', {'period': period.id})}= 'open'
-            %a.btn.btn-danger{:href => path('workactivity_period_remove', {'period': period.id})}= 'remove'
-            %a.btn.btn-success{:href => path('workactivity_period_edit', {'period': period.id})}= 'edit'
+    .m-t-60
+      .header-large-text
+        = 'List of registered activities of current period'
+      .activity-right
+        - if currentPeriod is defined
+          %a.btn.btn-default{:href => path('workactivity_activity_new', {'period' :periods[0].id})}= "create new activity"
+      .activity-center
+        %table.table.table-bordered.table-striped.bg-info
+          %thead
+            %td= 'nr'
+            %td= 'name'
+            %td= 'date'
+            %td= 'description'
+            %td= 'time'
+            %td= 'self teach'
+            %td= 'Invoiceable'
+            %td
+          %tbody
+            - for activity in activities
+              %tr
+                %td= loop.index
+                %td= activity.name
+                %td= activity.date.date|date("d-m-Y")
+                %td= activity.description
+                %td= activity.time
+                %td= activity.selfTeach
+                %td= activity.invoiceable
+                %td.text-center
+                  %a.btn.btn-danger{:href => path('workactivity_activity_remove', {'activity': activity.id })}= 'remove'
+                  %a.btn.btn-success{:href => path('workactivity_activity_edit', {'activity': activity.id })}= 'edit'
 
-  - if currentPeriod is defined
-    %a.btn.btn-default{:href => path('workactivity_activity_new', {'period' :periods[0].id})}= "create new activity"
-  %table.table.table-bordered.table-striped.bg-info
-    %thead
-      %td= 'nr'
-      %td= 'name'
-      %td= 'description'
-      %td= 'time'
-      %td= 'self teach'
-      %td= 'Invoiceable'
-      %td
-    %tbody
-      - for activity in activities
-        %tr
-          %td= loop.index
-          %td= activity.name
-          %td= activity.description
-          %td= activity.time
-          %td= activity.selfTeach
-          %td= activity.invoiceable
-          %td.text-center
-            %a.btn.btn-danger{:href => path('workactivity_activity_remove', {'activity': activity.id })}= 'remove'
-            %a.btn.btn-success{:href => path('workactivity_activity_edit', {'activity': activity.id })}= 'edit'
+      .m-t-120
+        .header-large-text
+          = 'List of registered periods.'
+        .new-period-btn
+          %a.btn.btn-default{:href => path('workactivity_period_new')}= 'new period'
+
+        %table.table.table-bordered.table-striped.bg-info
+          %thead
+            %td= 'from'
+            %td= 'to'
+            %td
+
+          %tbody
+            - for period in periods
+              %tr
+                %td= period.fromDate.date|date("d-m-Y")
+                %td= period.toDate.date|date("d-m-Y")
+                %td.text-center
+                  %a.btn.btn-info{:href => path('workactivity_activity_index', {'period': period.id})}= 'open'
+                  %a.btn.btn-danger{:href => path('workactivity_period_remove', {'period': period.id})}= 'remove'
+                  %a.btn.btn-success{:href => path('workactivity_period_edit', {'period': period.id})}= 'edit'

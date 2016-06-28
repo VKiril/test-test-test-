@@ -4,6 +4,9 @@ namespace WorkActivityBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Class Period
  *
@@ -172,5 +175,17 @@ class Period
     public function setTODOActivity($TODOActivity)
     {
         $this->TODOActivity = $TODOActivity;
+    }
+
+    /**
+     * @Assert\Callback
+     * @param ExecutionContextInterface $context
+     */
+    public function validate(ExecutionContextInterface $context)
+    {
+        $interval = $this->getToDate()->diff($this->getFromDate())->format('%a');
+        if($interval > 7) {
+            $context->buildViolation('Period cannot be bigger then one week')->addViolation();
+        }
     }
 }

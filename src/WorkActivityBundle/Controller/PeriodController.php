@@ -25,10 +25,10 @@ class PeriodController extends BaseController
      */
     public function indexAction(Request $request)
     {
-        $periodReposiotry = $this->getEM()->getRepository('WorkActivityBundle:Period');
+        $periodRepository = $this->getEM()->getRepository('WorkActivityBundle:Period');
 
-        $validPeriod = $periodReposiotry->getLastPeriods();
-        $currentPeriod = $periodReposiotry->getCurrentPeriod();
+        $validPeriod = $periodRepository->getLastPeriods();
+        $currentPeriod = $periodRepository->getCurrentPeriod();
 
         if (!$validPeriod['isValid']) {
             return $this->redirectToRoute('workactivity_period_new');
@@ -36,10 +36,9 @@ class PeriodController extends BaseController
 
         $activities = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findAll();
 
-
         return $this->render('WorkActivityBundle:Period:index.html.haml', [
             'activities' => $activities,
-            'currentPeriod' => $currentPeriod[0],
+            'currentPeriod' => $currentPeriod[0], //todo, here should be only one array element,  I will have to remove item [0]w
             'periods' => $validPeriod['period']
         ]);
     }

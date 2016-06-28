@@ -26,7 +26,7 @@ html,body {
     font-size: 14px;
     color: #4c525c;
     /*min-width: 1200px;*/
-    height: 100%;
+    /*height: 100%;*/
     background: rgba(52, 210, 210, 0.31);
 }
 
@@ -77,9 +77,57 @@ html,body {
     font-size: 20px;
 }
 .show-date {
-    border: 1px solid rgba(30, 144, 255, 0.21);
+    border: 1px solid rgba(30, 144, 255, 0.11);
     width: 500px;
-    margin-left: 100px;
     padding-left: 40px;
     border-radius: 5px;
+    display: inline-block;
+    background: rgba(51, 152, 131, 0.1);
+    margin-bottom: 5px;
+}
+.m-t-120 {
+    margin-top: 120px;
+}
+
+.m-t-60 {
+    margin-top: 60px;
+}
+
+.header-large-text {
+    margin-left: 70px;
+    font-size: 30px;
+    color: blue;
+    font-family: bold;
+    display: inline-block;
+}
+
+.new-period-btn{
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+
+.work-activity-left {
+    margin-left: 70px;
+    display: inline-block;
+}
+
+.activity-right{
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+
+.current-period {
+    display: inline-block;
+    font-size: 30px;
+    text-transform: capitalize;
+    color: blue;
+    font-family: bold;
+}
+
+.activity-content {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(64, 173, 165, 0.04);
 }
