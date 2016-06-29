@@ -3,9 +3,8 @@
 namespace WorkActivityBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WorkActivityBundle\Entity\Period;
@@ -17,15 +16,15 @@ class PeriodType extends AbstractType
     {
         if($options['label'] == 'first'){
             $builder
-                ->add('fromDate', DateType::class, [
+                ->add('fromDate', TextType::class, [
                     'label' => 'from Date'
                 ])
-                ->add('toDate', DateType::class,[
+                ->add('toDate', TextType::class,[
                     'label' => 'to Date'
                 ]);
         } else {
             $builder
-                ->add('holiday', DateType::class);
+                ->add('holiday', TextType::class);
         }
 
         $builder

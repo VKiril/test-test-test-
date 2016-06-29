@@ -34,7 +34,7 @@ class PeriodController extends BaseController
             return $this->redirectToRoute('workactivity_period_new');
         }
 
-        $activities = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findAll();
+        $activities = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findBy(['id' => $currentPeriod[0]->getId()]);
 
         return $this->render('WorkActivityBundle:Period:index.html.haml', [
             'activities' => $activities,

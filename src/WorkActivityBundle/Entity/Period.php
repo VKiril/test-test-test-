@@ -183,6 +183,9 @@ class Period
      */
     public function validate(ExecutionContextInterface $context)
     {
+        $this->fromDate = new \DateTime($this->getFromDate());
+        $this->toDate = new \DateTime($this->getToDate());
+
         $interval = $this->getToDate()->diff($this->getFromDate())->format('%a');
         if($interval > 7) {
             $context->buildViolation('Period cannot be bigger then one week')->addViolation();

@@ -8,7 +8,7 @@
     %title
       - block title "Right Way"
 
-    - stylesheets "assets/vendor/bootstrap/dist/css/bootstrap.min.css" "bundles/workactivity/activity.css"
+    - stylesheets "assets/vendor/bootstrap/dist/css/bootstrap.min.css" "bundles/workactivity/activity.css" "assets/vendor/jquery-ui/themes/smoothness/jquery-ui.css"
       %link{:href => "#{asset_url}", :rel => "stylesheet", :type => "text/css"}
 
     - block css ""
@@ -21,7 +21,7 @@
       .content
         - block content ""
 
-    - javascripts 'assets/vendor/jquery/dist/jquery.min.js' 'assets/vendor/bootstrap/dist/js/bootstrap.min.js' 'bundles/workactivity/js/main.js'
+    - javascripts 'assets/vendor/jquery/dist/jquery.min.js' 'assets/vendor/jquery-ui/jquery-ui.min.js' 'assets/vendor/bootstrap/dist/js/bootstrap.min.js' 'bundles/workactivity/js/main.js'
       %script{:src => asset_url, :type => "text/javascript"}
 
     - block js ""

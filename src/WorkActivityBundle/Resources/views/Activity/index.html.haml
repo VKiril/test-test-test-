@@ -2,10 +2,12 @@
 
 - block content
   %a.btn.btn-default{:href => path('workactivity_activity_new', {'period' :period.id})}= "create new activity"
+  %a.btn.btn-default{:href => path('workactivity_period_index')}= "back"
   %table.table.table-bordered.table-striped.bg-info
     %thead
       %td= 'nr'
       %td= 'name'
+      %td= 'date'
       %td= 'description'
       %td= 'time'
       %td= 'self teach'
@@ -16,10 +18,16 @@
         %tr
           %td= loop.index
           %td= activity.name
+          %td= activity.date.date|date("d-m-Y")
           %td= activity.description
           %td= activity.time
-          %td= activity.selfTeach
-          %td= activity.invoiceable
+          %td
+            - if activity.selfTeach == 1
+              %i.glyphicon.glyphicon-ok
+          %td
+            - if activity.invoiceable == 1
+              %i.glyphicon.glyphicon-ok
+
           %td.text-center
             %a.btn.btn-danger{:href => path('workactivity_activity_remove', {'activity': activity.id })}= 'remove'
             %a.btn.btn-success{:href => path('workactivity_activity_edit', {'activity': activity.id })}= 'edit'

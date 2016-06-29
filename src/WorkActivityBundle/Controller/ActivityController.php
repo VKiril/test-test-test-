@@ -26,7 +26,7 @@ class ActivityController extends BaseController
      */
     public function indexAction(Period $period)
     {
-        $activities = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findAll();
+        $activities = $this->getEM()->getRepository('WorkActivityBundle:Activity')->findByPeriod($period);
 
         return $this->render('WorkActivityBundle:Activity:index.html.haml', [
             'activities' => $activities,
@@ -63,6 +63,8 @@ class ActivityController extends BaseController
             $activity = $form->getData();
             $activity->setPeriod($period);
             $activity->setProject($temp[$request->request->all()['activity']['project']]);
+            $activity->setDate(new \DateTime($form->getData()->getDate()));
+
             $this->getEM()->persist($activity);
             $this->getEM()->flush($activity);
 

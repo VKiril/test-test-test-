@@ -26,8 +26,8 @@ html,body {
     font-size: 14px;
     color: #4c525c;
     /*min-width: 1200px;*/
-    /*height: 100%;*/
-    background: rgba(52, 210, 210, 0.31);
+    min-height: 100%;
+    background: rgba(52, 210, 210, 0.17);
 }
 
 .from {
