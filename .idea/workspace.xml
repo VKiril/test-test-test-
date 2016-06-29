@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9ad2b46-c69e-490f-b3ed-f1243628b6ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.bowerrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Repository/ActivityRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Controller/ActivityController.php" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Controller/ActivityController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Controller/PeriodController.php" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Controller/PeriodController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Entity/Period.php" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Entity/Period.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/ActivityType.php" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/ActivityType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/PeriodType.php" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/PeriodType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/activity.css" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/activity.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/js/main.js" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Activity/index.html.haml" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Activity/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Layout/main.html.haml" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Layout/main.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Period/index.html.haml" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Period/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Period/new.html.haml" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Period/new.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php" afterPath="$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php" />
     </list>
     <ignored path="RightWay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,42 +26,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PeriodController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PeriodController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Controller/PeriodController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667">
-              <caret line="58" column="0" selection-start-line="57" selection-start-column="39" selection-end-line="58" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.0">
+              <caret line="60" column="68" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Period/index.html.haml">
+      <file leaf-file-name="PeriodRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.666667">
-              <caret line="69" column="89" selection-start-line="69" selection-start-column="89" selection-end-line="69" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/activity.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.666667">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Activity/index.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6666667">
-              <caret line="4" column="63" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
-              <folding />
+            <state vertical-scroll-proportion="0.7894737">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding>
+                <element signature="e#1446#1473#1#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,8 +51,8 @@
       <file leaf-file-name="ActivityController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Controller/ActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.333333">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="-14.0">
+              <caret line="28" column="71" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -91,8 +61,8 @@
       <file leaf-file-name="ActivityRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Repository/ActivityRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.666667">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="32" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
               <folding>
                 <element signature="e#49#83#0#PHP" expanded="true" />
                 <element signature="e#359#388#1#PHP" expanded="true" />
@@ -116,7 +86,6 @@
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Controller/ProjectController.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Entity/Project.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Entity/TODOActivity.php" />
-        <option value="$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Project/test.html" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/ProjectType.php" />
@@ -136,12 +105,13 @@
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/ActivityType.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Form/Type/PeriodType.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/js/main.js" />
-        <option value="$PROJECT_DIR$/src/WorkActivityBundle/Controller/PeriodController.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Period/index.html.haml" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Resources/public/activity.css" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Repository/ActivityRepository.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Controller/ActivityController.php" />
         <option value="$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Activity/index.html.haml" />
+        <option value="$PROJECT_DIR$/src/WorkActivityBundle/Controller/PeriodController.php" />
+        <option value="$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php" />
       </list>
     </option>
   </component>
@@ -470,6 +440,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20127796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -479,7 +450,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39808917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -507,7 +477,8 @@
     <MESSAGE value="added some front end changes" />
     <MESSAGE value="added styles, added validation for period" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="added datepickers, vilter activity by period" />
+    <option name="LAST_COMMIT_MESSAGE" value="added datepickers, vilter activity by period" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -859,33 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5555553">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Controller/ActivityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Repository/ActivityRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.666667">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="32" />
-          <folding>
-            <element signature="e#49#83#0#PHP" expanded="true" />
-            <element signature="e#359#388#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Resources/views/Activity/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6666667">
@@ -902,11 +846,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Controller/ActivityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.0">
+          <caret line="28" column="71" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Repository/ActivityRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="e#49#83#0#PHP" expanded="true" />
+            <element signature="e#359#388#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Controller/PeriodController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667">
-          <caret line="58" column="0" selection-start-line="57" selection-start-column="39" selection-end-line="58" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="60" column="68" selection-start-line="60" selection-start-column="68" selection-end-line="60" selection-end-column="68" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WorkActivityBundle/Repository/PeriodRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7894737">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#1446#1473#1#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

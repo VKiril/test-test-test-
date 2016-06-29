@@ -47,4 +47,17 @@ class PeriodRepository extends EntityRepository
 
         return $period;
     }
+
+    public function validatePeriod(Period $period)
+    {
+        $result = $this->getEntityManager()->getRepository('WorkActivityBundle:Period')
+            ->createQueryBuilder('p')
+            ->select('p')
+            ->where('p.toDate :<= formDate ')
+            ->setParameter('formDate', $period->getFromDate())
+            ->getQuery()
+            ->getArrayResult();
+
+        return sizeof($result) != 0;
+    }
 }

@@ -58,6 +58,9 @@ class PeriodController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $this->getEM()->getRepository('WorkActivityBundle:Period')
+                ->validatePeriod($form->getData());
+
             $this->getEM()->persist($period);
             $this->getEM()->flush();
 
