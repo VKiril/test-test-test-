@@ -131,3 +131,26 @@ html,body {
     padding: 20px;
     background: rgba(64, 173, 165, 0.04);
 }
+
+.empty-message {
+    font-size: 20px;
+    margin-top: 28px;
+    margin-left: 95px;
+    font-family: bold, "Times New Roman";
+}
+
+.empty-message-box {
+    border: 1px solid rgba(72, 59, 59, 0.13);
+    border-radius: 5px;
+    background: rgb(217, 237, 247);
+    padding-bottom: 20px;
+    color: #6d6565;
+}
+
+.activity {
+    margin-right: 110px;
+}
+
+.w-100 {
+    width: 100%;
+}

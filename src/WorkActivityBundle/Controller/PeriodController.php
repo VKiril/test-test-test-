@@ -4,6 +4,7 @@ namespace WorkActivityBundle\Controller;
 
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use WorkActivityBundle\Entity\Period;
 use WorkActivityBundle\Form\Type\PeriodType;
@@ -58,15 +59,19 @@ class PeriodController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->getEM()->getRepository('WorkActivityBundle:Period')
+            $validate = $this->getEM()->getRepository('WorkActivityBundle:Period')
                 ->validatePeriod($form->getData());
+            if ($validate) {
+                $form->addError(new FormError('Periods can\'t overlap.'));
 
-            $this->getEM()->persist($period);
-            $this->getEM()->flush();
+            } else {
+                $this->getEM()->persist($period);
+                $this->getEM()->flush();
 
-            $this->addFlash('success', 'new period was created');
+                $this->addFlash('success', 'new period was created');
 
-            return $this->redirectToRoute('workactivity_period_index');
+                return $this->redirectToRoute('workactivity_period_index');
+            }
         }
 
 

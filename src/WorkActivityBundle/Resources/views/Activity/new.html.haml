@@ -1,6 +1,17 @@
 - extends 'WorkActivityBundle:Layout:main.html.haml'
 
+- use 'bootstrap_3_horizontal_layout.html.twig'
+
+- form_theme form _self
+
+- block form_label_class
+  col-sm-2
+
+- block form_group_class
+  col-sm-10
+
 - block content
+
   .activity
     = form_start(form)
     = form_widget(form)

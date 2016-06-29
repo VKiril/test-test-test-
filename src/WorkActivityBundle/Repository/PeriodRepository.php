@@ -53,10 +53,11 @@ class PeriodRepository extends EntityRepository
         $result = $this->getEntityManager()->getRepository('WorkActivityBundle:Period')
             ->createQueryBuilder('p')
             ->select('p')
-            ->where('p.toDate :<= formDate ')
+            ->where('p.toDate >= :formDate ')
             ->setParameter('formDate', $period->getFromDate())
-            ->getQuery()
-            ->getArrayResult();
+            ->getQuery();
+
+        $result = $result->getArrayResult();
 
         return sizeof($result) != 0;
     }

@@ -20,7 +20,6 @@ class ProjectType extends AbstractType
             ->add('technology', TextType::class, ['attr' => ['class' => 'form-control']])
             ->add('submit', SubmitType::class, [
                 'attr'  => ['class' => 'period-save btn btn-info'],
-                'label' => 'save',
             ]);
     }
 

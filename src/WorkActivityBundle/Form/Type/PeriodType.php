@@ -17,10 +17,12 @@ class PeriodType extends AbstractType
         if($options['label'] == 'first'){
             $builder
                 ->add('fromDate', TextType::class, [
-                    'label' => 'from Date'
+                    'label' => 'from Date',
+                    'attr' => ['class' => 'form-control']
                 ])
                 ->add('toDate', TextType::class,[
-                    'label' => 'to Date'
+                    'label' => 'to Date',
+                    'attr' => ['class' => 'form-control']
                 ]);
         } else {
             $builder

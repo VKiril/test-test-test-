@@ -1,22 +1,19 @@
 - extends 'WorkActivityBundle:Layout:main.html.haml'
 
+- use 'bootstrap_3_horizontal_layout.html.twig'
+
+- form_theme form _self
+
+- block form_label_class
+    col-sm-2
+
+- block form_group_class
+    col-sm-10
+
+
 - block content
-    .container
-        .row
-            = form_start(form)
-            .m-5
-                .col-xs-4.p
-                    = form_label(form.name)
-                .col-xs-8
-                    = form_widget(form.name)
-            .m-5
-                .col-xs-4
-                    = form_label(form.owner)
-                .col-xs-8
-                    = form_widget(form.owner)
-            .m-5
-                .col-xs-4
-                    = form_label(form.technology)
-                .col-xs-8
-                    = form_widget(form.technology)
-            = form_end(form)
+    .activity
+        = form_start(form)
+        = form_errors(form)
+        = form_widget(form)
+        = form_end(form)
